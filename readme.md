@@ -1,7 +1,5 @@
 # 株式会社ステップバイワーク環境構築
 
-URL: https://github.com/huesugi/sbw-codingtemplate
-
 # 1.MAMPインストール
 
 ローカルでHTMLとかPHPとかの確認用に使う。
