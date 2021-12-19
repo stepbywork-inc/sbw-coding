@@ -48,7 +48,7 @@ nodist等他のバージョン管理ツールが入っている場合は先に�
 
 # gulpの設定
 
-##setting.json.defaultをコピーしてsetting.jsonにリネーム
+## setting.json.defaultをコピーしてsetting.jsonにリネーム
 
 自分のローカルのパスを入れる
 
