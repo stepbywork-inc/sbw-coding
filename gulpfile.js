@@ -47,6 +47,8 @@ const imagemin = require("gulp-imagemin");
 const pngquant = require("imagemin-pngquant");
 const del = require("del");
 const terser = require("gulp-terser");
+const replace = require("gulp-replace");
+
 
 const scss = () => {
   return gulp
@@ -56,6 +58,12 @@ const scss = () => {
       sass({
         outputStyle: "compressed",
       }).on("error", sass.logError)
+    )
+    .pipe(
+      replace(
+        '../../images/',
+        '../images/'
+      )
     )
     .pipe(
       postcss([
