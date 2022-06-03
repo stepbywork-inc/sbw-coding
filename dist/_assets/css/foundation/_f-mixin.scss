@@ -27,6 +27,15 @@
 // 06__media query
 // ----------------------------------------------------------
 @mixin media($size, $px: false) {
+	@if ($size == "pc") {
+		@media screen and (max-width: $breakPointPc - 1) {
+			@content;
+		}
+	} @else if ($size == "pcup") {
+		@media screen and (min-width: $breakPointPc), print {
+			@content;
+		}
+	}
 	@if ($size == "tab") {
 		@media screen and (max-width: $breakPointTab - 1) {
 			@content;
