@@ -1,6 +1,10 @@
 //読み込むパスと出力するパスを指定
 const srcRootPath = "dist/";
 const srcPath = {
+  html: {
+    src: srcRootPath + "",
+    dist: srcRootPath + "",
+  },
   styles: {
     src: srcRootPath + "_assets/css/",
     dist: srcRootPath + "assets/css/",
@@ -49,6 +53,13 @@ const del = require("del");
 const terser = require("gulp-terser");
 const replace = require("gulp-replace");
 
+const html = () => {
+  return (
+    gulp
+      .src([srcPath.html.src + "**/*.html", "!" + srcPath.html.src + "**/_*.html"])
+      .pipe(gulpif(browserSync.active === true, browserSync.stream()))
+  );
+};
 
 const scss = () => {
   return gulp
@@ -166,6 +177,7 @@ const browserSyncFunc = () => {
 };
 
 const watch = () => {
+  gulp.watch(srcPath.html.src + "**/*.html", html);
   gulp.watch(srcPath.styles.src + "**/*.scss", scss);
   gulp.watch(srcPath.images.src + "**/*", img);
   gulp.watch(srcPath.scripts.src + "**/*.js", js);
