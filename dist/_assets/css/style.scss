@@ -1,9 +1,4 @@
-@import "foundation/f-mixin";
-@import "foundation/f-variables";
-@import "foundation/f-ress";
-
-@import "layout/**";
-
-@import "component/**";
-
-@import "project/**";
+@use "foundation/f-ress";
+@use "layout/**";
+@use "component/**";
+@use "project/**";

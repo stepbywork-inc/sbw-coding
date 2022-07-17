@@ -41,7 +41,8 @@ const sass = require("gulp-sass")(require("sass"));
 const postcss = require("gulp-postcss");
 const postcssEasingGradients = require("postcss-easing-gradients");
 const mqpacker = require("css-mqpacker");
-const sassGlob = require("gulp-sass-glob");
+// const sassGlob = require("gulp-sass-glob");
+const sassGlob = require('gulp-sass-glob-use-forward')
 const gulpif = require("gulp-if");
 const browserSync = require("browser-sync");
 const plumber = require("gulp-plumber");
@@ -67,6 +68,7 @@ const scss = () => {
     .pipe(sassGlob())
     .pipe(
       sass({
+        // includePaths: [srcPath.styles.src],
         outputStyle: "compressed",
       }).on("error", sass.logError)
     )

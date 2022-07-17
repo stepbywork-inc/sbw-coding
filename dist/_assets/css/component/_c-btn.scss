@@ -1,3 +1,5 @@
+@use "../foundation/f-mixin" as *;
+@use "../foundation/f-variables" as *;
 /*
   基本的にa,buttonタグにつける
   中央寄せなどは親要素で設定
