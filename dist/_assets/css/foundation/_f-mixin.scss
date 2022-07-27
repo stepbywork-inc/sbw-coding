@@ -64,7 +64,11 @@
 			@content;
 		}
 	}
-
+	@if ($size == "hover") {
+		@media (hover: hover) and (pointer: fine) {
+			@content;
+		}
+	}
 	@if ($px) {
 		@if ($size == "max-width") {
 			@media screen and (max-width: $px) {
