@@ -1,2 +1,3 @@
-<footer class="l-ftr">
-</footer>
+</body>
+
+</html>

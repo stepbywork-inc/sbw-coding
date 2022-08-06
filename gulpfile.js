@@ -42,7 +42,7 @@ const postcss = require("gulp-postcss");
 const postcssEasingGradients = require("postcss-easing-gradients");
 const mqpacker = require("css-mqpacker");
 // const sassGlob = require("gulp-sass-glob");
-const sassGlob = require('gulp-sass-glob-use-forward')
+const sassGlob = require("gulp-sass-glob-use-forward");
 const gulpif = require("gulp-if");
 const browserSync = require("browser-sync");
 const plumber = require("gulp-plumber");
@@ -55,11 +55,14 @@ const terser = require("gulp-terser");
 const replace = require("gulp-replace");
 
 const html = () => {
-  return (
-    gulp
-      .src([srcPath.html.src + "**/*.html", "!" + srcPath.html.src + "**/_*.html"])
-      .pipe(gulpif(browserSync.active === true, browserSync.stream()))
-  );
+  return gulp
+    .src([
+      srcPath.html.src + "**/*.html",
+      "!" + srcPath.html.src + "**/_*.html",
+      srcPath.html.src + "**/*.php",
+      "!" + srcPath.html.src + "**/_*.php",
+    ])
+    .pipe(gulpif(browserSync.active === true, browserSync.stream()));
 };
 
 const scss = () => {
@@ -72,12 +75,7 @@ const scss = () => {
         outputStyle: "compressed",
       }).on("error", sass.logError)
     )
-    .pipe(
-      replace(
-        '../../images/',
-        '../images/'
-      )
-    )
+    .pipe(replace("../../images/", "../images/"))
     .pipe(
       postcss([
         autoprefixer({ grid: true }),
