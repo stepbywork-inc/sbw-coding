@@ -3,19 +3,25 @@
   "editor.insertSpaces": true,
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
-  "[html]": {
+  "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
