@@ -18,13 +18,42 @@
         &:before {
           margin: 0 3px;
           color: black;
-          content: '>';
+          content: ">";
         }
       }
-      a,span {
+      a,
+      span {
         font-size: 16px;
       }
       a {
+      }
+    }
+  }
+  //WPプラグイン用
+  &__list {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    width: 100%;
+    overflow: hidden;
+    > span {
+      + span {
+        &:before {
+          margin: 0 3px;
+          color: black;
+          font-size: 14px;
+          content: ">";
+          @include media(sm) {
+            font-size: 12px;
+          }
+        }
+      }
+      > a,
+      > span {
+        font-size: 14px;
+        @include media(sm) {
+          font-size: 12px;
+        }
       }
     }
   }

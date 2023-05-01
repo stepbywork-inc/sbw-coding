@@ -35,11 +35,28 @@
 	height: 100%;
 	object-position: center;
 }
-.c-anchor {
-	margin-top: -100px;
-	padding-top: 100px;
-	@include media(tab) {
-		@include media(sm) {
-		}
-	} 
+
+@for $i from 1 through 100 {
+  .mb#{$i * 5} {
+    margin-bottom: #{$i * 5}px !important;
+    @include media(sm) {
+      margin-bottom: #{$i * 3}px !important;
+    }
+  }
+  .mt#{$i * 5} {
+    margin-top: #{$i * 5}px !important;
+    @include media(sm) {
+      margin-top: #{$i * 3}px !important;
+    }
+  }
+}
+
+.c-center {
+	text-align: center;
+}
+.c-left {
+	text-align: left;
+}
+.c-right {
+	text-align: right;
 }
