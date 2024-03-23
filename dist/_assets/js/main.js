@@ -12,16 +12,6 @@ window.addEventListener('load', function () {
 })
 window.addEventListener('scroll', function () {
 });
-function smoothScroll() {
-	$('[href^="#"]').click(function(){
-		var headerHeight = $('.js-hdr').outerHeight()
-		var href = $(this).attr("href");
-		var target = $(href == "#" || href == "" ? 'html' : href);
-		var position = target.offset().top - headerHeight;
-		$('body,html').stop().animate({ scrollTop: position }, 500);
-		return false;
-	});
-}
 function pagetop() {
   $('.js-pagetop').hide();
   $(window).on('scroll', function () {
